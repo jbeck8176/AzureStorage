@@ -124,7 +124,7 @@ namespace AzureStorage
                         case "guid":
                             pInfo.SetValue(retObj, prop.Value.GuidValue);
                             break;
-                        case "bool":
+                        case "boolean":
                             pInfo.SetValue(retObj, prop.Value.BooleanValue);
                             break;
                         case "datetime":
