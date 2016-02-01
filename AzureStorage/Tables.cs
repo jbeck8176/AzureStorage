@@ -125,7 +125,14 @@ namespace AzureStorage
 							pInfo.SetValue(retObj, prop.Value.BooleanValue);
 							break;
 						case EdmType.DateTime:
-							pInfo.SetValue(retObj, prop.Value.DateTime);
+                            if (pInfo.PropertyType.Name == "DateTime")
+                            {
+                                pInfo.SetValue(retObj, prop.Value.DateTime);
+                            }
+                            else
+                            {
+                                pInfo.SetValue(retObj, prop.Value.DateTimeOffsetValue);
+                            }
 							break;
 						case EdmType.Double:
 							pInfo.SetValue(retObj, prop.Value.DoubleValue);
